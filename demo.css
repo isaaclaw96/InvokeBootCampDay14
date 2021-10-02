@@ -8,9 +8,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #21528D;
+    background-image: url('images/default.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 
 #weather-holder {
@@ -25,20 +26,17 @@
     border: 2px solid white;
     margin: 20px auto;
     width: 500px;
-    height: 200px;
+    height: 250px;
     border-radius: 20px;
     background-color: none;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
     padding: 15px;
-    background-color: rgba(191, 191, 191, 0.8)
+    background-color: rgba(191, 191, 191, 0.5)
 }
 .weather-card > * {
     margin-bottom: 15px;
-}
-#temp-holder {
-    display: flex;
 }
 #city {
     border-radius: 15px;
@@ -67,7 +65,7 @@
     box-shadow: 0 0 15px white;
     padding: 15px;
     border-radius: 15px;
-    background-color: rgba(191, 191, 191, 0.8)
+    background-color: rgba(191, 191, 191, 0.5)
 }
 #buttons > *{
     margin: 20px 15px;

@@ -44,7 +44,9 @@ function callWeatherAPI(pos){
     windSpan.innerHTML = windSpd;
     humidSpan.innerHTML = humidity;
     // weatherHolder.style.backgroundImage = "url('icons/kl-bg.jpg')"
-    rainSpan.innerHTML = capitalizeFirstLetter(rainSpd);
+    rainSpan.innerHTML = capitalizeFirstLetter(rainSpd); 
+
+
     var dailyDay = data.daily.length
     for(i = 0; i < 6; i++){
         let forecastContainer = document.createElement('div');
@@ -74,7 +76,7 @@ function callWeatherAPI(pos){
         tmrTemp.innerHTML = `${tempEle}&#8451`;
         let dayIcon = `http://openweathermap.org/img/w/${data.daily[i].weather[0].icon}.png`;
         imgIcon.src = dayIcon;
-
+        
 
 
         forecastText.append(weatherForecast);
@@ -106,6 +108,8 @@ function currentAPI(city) {
         var rainSpd = data.weather[0].description;
         console.log(`Timezone: ${currentTimezone}, Temp:${currentTemp}, Rain:${rainSpd}, Wind:${windSpd}`);
         let dateTime = moment().utc(data.dt).format('dddd, MMMM, Do YYYY');
+        var weatherMain = data.weather[0].main;
+        console.log(weatherMain);
         
         timeZone.innerHTML = dateTime;
         temp.innerHTML = currentTemp;
@@ -114,19 +118,41 @@ function currentAPI(city) {
         windSpan.innerHTML = windSpd;
         rainSpan.innerHTML = capitalizeFirstLetter(rainSpd);
 
-
         var lon = data.coord.lon;
         var lat = data.coord.lat;
 
         var location = {'coords': {'latitude': lat, 'longitude': lon}};
 
-        console.log(lat, lon);
+        // console.log(lat, lon);
          while(foreCast.hasChildNodes()){
             foreCast.removeChild(foreCast.firstChild);
         }
         callWeatherAPI(location);
+        changeBg(weatherMain)
     })   
 
+}
+function changeBg(weather){
+    
+
+    console.log(weather)
+
+    switch(weather){
+        case 'Clouds': 
+            weatherHolder.style.backgroundImage = "url(images/cloudy.jpg)"
+            break;
+        case 'Clear':
+            weatherHolder.style.backgroundImage = "url(images/sunny.jpg)"
+            break;
+        case 'Rain' :
+            weatherHolder.style.backgroundImage = "url(images/rainy.jpg)"
+            break;
+        case 'Thunderstorm' :
+            weatherHolder.style.backgroundImage = "url(images/thunder.jpg)"
+            break;
+        default:
+            weatherHolder.style.backgroundImage = "url(images/default.jpg)"
+    }
 }
 
 
