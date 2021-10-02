@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New API</title>
+
+    <link rel="stylesheet" href="new.css" />
+</head>
+<body>
+    <div id="container">
+        <div id="weather-holder">
+            <div class="weather-card">
+                <div>
+                    <h2><span id="temp">temp</span>&#8451</h2>
+                    <img id="icon" src=""/>
+                </div>
+                <div>
+                    <p>TimeZone: <span id="timezone"></span></p>
+                </div>
+                <div>
+                    <p>Weather: <span id="rain-space"></span></p>
+                    <p>Wind: <span id="wind-space"></span>m/s</p>
+                </div>
+            </div>
+        </div>
+        <div id="forecast">
+            <div class="forecast-container"></div>
+            <div class="forecast-container"></div>
+            <div class="forecast-container"></div>
+            <div class="forecast-container"></div>
+            <div class="forecast-container"></div>
+            <div class="forecast-container"></div>
+        </div>
+        <div id="buttons">
+                <button onclick="currentAPI('Kuala Lumpur')">Kuala Lumpur</button>
+                <button onclick="currentAPI('Johor')">Johor</button>
+                <button onclick="currentAPI('Sabah')">Sabah</button>
+                <button onclick="currentAPI('Sarawak')">Sarawak</button>
+        </div>
+    </div>
+    
+</body>
+</html>

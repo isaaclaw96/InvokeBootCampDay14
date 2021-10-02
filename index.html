@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="demo.css" />
+</head>
+<body>
+    <div id="container">
+        <div id="weather-holder">
+            <div class="weather-card" id="weather">
+                <div>
+                    <h2 id="location"></h2><h2 id="timezone"></h2>
+                </div>
+                
+                <div id="temp-holder">
+                    <h1><span id="temp">temp</span>&#8451</h1>
+                    <img id="icon" src=""/>
+                </div>
+                <div id="info">
+                    <p><i class="fas fa-cloud-sun">:</i> <span id="rain-space"></span></p>
+                    <p><i class="fas fa-wind">:</i> <span id="wind-space"></span>m/s</p>
+                    <p>Humidity: <span id="humidity"></span>%</p>
+                </div>
+            </div>
+        </div>
+        <div id="forecast">
+        </div>
+        <div id="buttons">
+                <button onclick="currentAPI('Kuala Lumpur')">Kuala Lumpur</button>
+                <button onclick="currentAPI('Johor')">Johor</button>
+                <button onclick="currentAPI('Sabah')">Sabah</button>
+                <button onclick="currentAPI('Sarawak')">Sarawak</button>
+        </div>
+    </div>
+    
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="demo.js"></script>
+</body>
+
+
+</html>
